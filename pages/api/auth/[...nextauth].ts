@@ -39,9 +39,8 @@ export default NextAuth({
           return null
         }
 
-        return {
-          accessToken: await response.json(),
-        }
+        const json = await response.json()
+        return json.accessToken;
       },
     }),
   ],
