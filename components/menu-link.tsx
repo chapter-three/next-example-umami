@@ -10,7 +10,7 @@ export type MenuLinkProps = Omit<
 function CustomLink(props, ref) {
   let { href, children, ...rest } = props
   return (
-    <NextLink href={href} passHref legacyBehavior={true}>
+    <NextLink href={href} passHref>
       <a ref={ref} {...rest}>
         {children}
       </a>

@@ -24,7 +24,7 @@ export function NodeRecipeTeaser({ node, ...props }: NodeRecipeTeaserProps) {
         </p>
       )}
       <MediaImage media={node.field_media_image} width={335} height={225} />
-      <Link href={node.path.alias} passHref legacyBehavior={true}>
+      <Link href={node.path.alias} passHref>
         <a className="inline-flex items-center uppercase hover:underline text-link">
           {t("view-recipe")}
           <svg

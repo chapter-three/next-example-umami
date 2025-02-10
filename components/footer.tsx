@@ -34,7 +34,7 @@ export function Footer({ menus, blocks }: FooterProps) {
             </h2>
             <div className="grid max-w-4xl mx-auto mt-4 text-sm text-center md:text-left md:grid-cols-4 gap-y-3 gap-x-4">
               {blocks.recipeCollections.map((tag) => (
-                <Link key={tag.id} href={tag.path.alias} passHref legacyBehavior={true}>
+                <Link key={tag.id} href={tag.path.alias} passHref>
                   <a className="font-semibold hover:underline">{tag.name}</a>
                 </Link>
               ))}
@@ -70,7 +70,6 @@ export function Footer({ menus, blocks }: FooterProps) {
                       ""
                     )}
                     passHref
-                    legacyBehavior={true}
                   >
                     <a className="text-sm underline transition-colors hover:bg-black">
                       {blocks.footerPromo.field_content_link.title}

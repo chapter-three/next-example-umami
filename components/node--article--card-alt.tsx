@@ -26,7 +26,7 @@ export function NodeArticleCardAlt({
     >
       <div className="flex flex-col flex-1 space-y-4">
         <h2 className="flex-1 font-serif text-2xl">{node.title}</h2>
-        <Link href={node.path.alias} passHref legacyBehavior={true}>
+        <Link href={node.path.alias} passHref>
           <a className="inline-flex items-center uppercase hover:underline text-link">
             {t("view-article")}
             <svg

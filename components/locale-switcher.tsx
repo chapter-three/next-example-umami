@@ -16,7 +16,7 @@ export function LocaleSwitcher({ ...props }) {
       <ul className="flex space-x-4">
         {locales.map((locale) => (
           <li key={locale}>
-            <Link href={asPath} locale={locale} passHref legacyBehavior={true}>
+            <Link href={asPath} locale={locale} passHref>
               <a
                 data-cy={`local-switcher-${locale}`}
                 className={classNames(
