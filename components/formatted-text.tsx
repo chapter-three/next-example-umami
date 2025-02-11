@@ -1,6 +1,8 @@
-import { HTMLReactParserOptions, domToReact } from "html-react-parser"
-import { Element } from "domhandler/lib/node"
-import parse from "html-react-parser"
+import parse, {
+  Element,
+  HTMLReactParserOptions,
+  domToReact,
+} from "html-react-parser"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -14,8 +16,8 @@ const options: HTMLReactParserOptions = {
           src,
           alt,
           class: className,
-          width = "100px",
-          height = "100px",
+          width = '100',
+          height = '100',
         } = domNode.attribs
 
         if (isRelative(src)) {
@@ -23,8 +25,8 @@ const options: HTMLReactParserOptions = {
             <div className={className}>
               <Image
                 src={`${process.env.NEXT_PUBLIC_DRUPAL_BASE_URL}/${src}`}
-                width={`${width}px`}
-                height={`${height}px`}
+                width={parseInt(width)}
+                height={parseInt(height)}
                 alt={alt}
                 layout="intrinsic"
                 objectFit="cover"
@@ -39,7 +41,7 @@ const options: HTMLReactParserOptions = {
 
         if (href && isRelative(href)) {
           return (
-            <Link href={href} passHref>
+            <Link href={href} passHref legacyBehavior={true}>
               <a className={className}>{domToReact(domNode.children)}</a>
             </Link>
           )
